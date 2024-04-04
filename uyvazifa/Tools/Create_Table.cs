@@ -14,13 +14,10 @@ public class MigrationsManager
         ";
         using (SqlConnection connection = new SqlConnection(connectionString))
         {
-            // Open the connection
             connection.Open();
 
-            // Create a SqlCommand object with the query and connection
             using (SqlCommand command = new SqlCommand(createTableQuery, connection))
             {
-                // Execute the query
                 command.ExecuteNonQuery();
                 Console.WriteLine("Table created successfully.");
             }
